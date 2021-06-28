@@ -1,4 +1,4 @@
-<!-- Nesesario para resolver problemas de compatibilidad con las versiones -->
+<!-- Nesesario para resolver problemas de compatibilidad con las versiones  -->
 <?php
 session_start();
 ?>
@@ -108,6 +108,7 @@ session_start();
   <script src="views/js/categorias.js"></script>
   <script src="views/js/productos.js"></script>
   <script src="views/js/clientes.js"></script>
+  <script src="views/js/ventas.js"></script>
 </body>
 
 </html>
