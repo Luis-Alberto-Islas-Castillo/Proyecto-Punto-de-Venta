@@ -22,6 +22,9 @@ class ControladorUsuarios{
                     
                     if($repuesta["estado"] == 1){
                         $_SESSION["iniciarSesion"] = "ok";
+                        $_SESSION["id"] = $repuesta["id"];
+                        $_SESSION["nombre"] = $repuesta["nombre"];
+                        
                         echo '<script>window.location = "inicio";</script>';   
                     }else{
                         echo '<br><div class="alert alert-danger">El usuario aun no esta activado</div>';
