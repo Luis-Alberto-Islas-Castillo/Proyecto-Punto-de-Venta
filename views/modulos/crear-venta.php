@@ -29,7 +29,7 @@
                       <input type="hidden" name="idVendedor" value="<?php echo $_SESSION["id"]; ?>">
                   </div>
                 </div>
-                <!--  Entrada Vendedor -->
+                <!--  Entrada Codigo -->
                 <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-key"></i></span>
@@ -76,13 +76,70 @@
                 <div class="form-group row nuevoProducto">
                   
                 </div>
+                <input type="hidden" id="listaProductos" name="listaProductos">
+                <!-- Boton Agregar Producto-->
+                <button type="button" class="btn btn-default hidden-lg btnAgregarProducto">Agregar producto</button>
+                <hr>
+                <div class="row">
+                 <!--  Impuestos y total -->
 
+                  <div class="col-xs-8 pull-right">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Impuesto</th>
+                          <th>Total</th>      
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td style="width: 50%">
+                            <div class="input-group">
+                              <input type="number" class="form-control input-lg" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta" placeholder="0" required>
+                              <input type="hidden" name="nuevoPrecioImpuesto" id="nuevoPrecioImpuesto" required>
+                              <input type="hidden" name="nuevoPrecioNeto" id="nuevoPrecioNeto" required>
+                              <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+                            </div>
+                          </td>
+                          <td style="width: 50%">
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+                              <input type="text" class="form-control input-lg" id="nuevoTotalVenta" name="nuevoTotalVenta" total="" placeholder="00000" readonly required>
+                              <input type="hidden" name="totalVenta" id="totalVenta">
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
+              <hr>
+              <!-- Entrada al metodo de pago -->
+              <div class="form-group row">
+                  <div class="col-xs-6" style="padding-right:0px">
+                     <div class="input-group">
+                      <select class="form-control" id="nuevoMetodoPago" name="nuevoMetodoPago" required>
+                        <option value="">Seleccione método de pago</option>
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="TC">Tarjeta Crédito</option>
+                        <option value="TD">Tarjeta Débito</option>                  
+                      </select>    
+                    </div>
+                  </div>
+                  <div class="cajasMetodoPago"></div>
+                  <input type="hidden" id="listaMetodoPago" name="listaMetodoPago">
+                </div>
             </div>
+
             <div class="box-footer">
               <button type="submit" class="btn btn-primary pull-right">Guardar Venta</button>
             </div>
           </form>
+          <?php
+          $guardarVenta = new ControladorVentas();
+          $guardarVenta -> ctrCrearVenta();
+          ?>
           </div>
         </div>
         <!--  Tabla de Productos -->
