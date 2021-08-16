@@ -55,6 +55,8 @@ session_start();
   <script src="views/plugins/sweetalert2/sweetalert2.all.js"></script>
    <!-- Icheck-->
   <script src="views/plugins/iCheck/icheck.min.js"></script>
+  <!--Jquery Number -->
+  <script src="views/plugins/jqueryNumber/jquerynumber.min.js"></script>
 </head>
 
 <!-- Cuerpo del Documento  -->
